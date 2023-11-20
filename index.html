@@ -10,20 +10,38 @@
   <body class="">
 
     <header class="header">
-      <h2> <a href="">View High Score</a></h2> 
-      <h2>Time:</h2>
+      <h2> <a href="#" id="view-scores">View High Score</a></h2> 
+      <h2>Time: <span id="timer">60</span></h2>
     </header>
 
-    <main class="main-container">
-     
-        <h1>CODING QUIZ CHALLANGE</h1>
-        <p><strong>Try to asnwer the following code related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</strong></p>
-        <button class="btn primary-btn">Start Quiz</button>
-        
+    <main>
+ 
+        <div class="main-container" id="start">
+            <h1>CODING QUIZ CHALLENGE</h1>
+            <p><strong>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</strong></p>
+
+            <button class="btn primary-btn" id="start-btn">Start Quiz</button>
+        </div>
+
+      <div class="hidden" id="quiz-container">
+        <div id="question-container">
+            <h2>questions</h2>
+          </div>
+  
+      </div>
+
+      <div id="end-container" class="hidden">
+        <h2>Quiz Over!</h2>
+        <p>Your final score is: <span id="final-score"></span></p>
+        <form id="initials-form">
+          <label for="initials">Enter your initials:</label>
+          <input type="text" id="initials" name="initials" maxlength="3" required />
+          <button type="submit" class="btn primary-btn">Submit</button>
+        </form>
+      </div>
     </main>
 
     <script src="./assets/js/script.js"></script>
 
   </body>
-
 </html>

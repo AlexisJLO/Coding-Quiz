@@ -14,13 +14,19 @@
     border-bottom-style: solid;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .main-container {
+   
     display: flex;
     margin: 100px;
     padding: 50px;
     flex-direction: column;
     align-items: center;
-  
 }
 
 .main-container p {
@@ -41,4 +47,8 @@
 
 .btn:hover {
     background-color: var(--Secondary-color);
+}
+
+.hidden {
+    display: none;
 }
