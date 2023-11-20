@@ -26,7 +26,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function viewHighScores() {
-    // Code to display high scores
+    clearInterval(timerInterval);
+    mainContainer.classList.add("hidden");
+    quizContainer.classList.add("hidden");
+    endContainer.classList.add("hidden");
+
+    const highScoresList = document.getElementById("high-scores-list");
+    const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+    highScoresList.innerHTML = "";
+    highScores.forEach((score, index) => {
+      const listItem = document.createElement("li");
+      listItem.textContent = `${index + 1}. ${score.initials} - ${score.score}`;
+      highScoresList.appendChild(listItem);
+    });
+    highScoresList.parentElement.classList.remove("hidden");
   }
 
   function updateTimer() {
@@ -57,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
     highScores.sort((a, b) => b.score - a.score);
 
     localStorage.setItem("highScores", JSON.stringify(highScores));
+    window.location.href = "index.html";
   }
-
-  // Additional functions for handling questions, choices, and user input
 });
