@@ -1,22 +1,26 @@
 * {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    --Main-color: purple;
+    --Secondary-color: rgb(197, 0, 197);
 }
 
 .header {
     display: flex;
-    background: rgb(63, 63, 63);
     justify-content: space-between;
     margin: 30px;
     padding: 10px 100px;
+    border-bottom: 2px;
+    border-color: gray;
+    border-bottom-style: solid;
 }
 
 .main-container {
     display: flex;
     margin: 100px;
     padding: 50px;
-    background: grey;
     flex-direction: column;
     align-items: center;
+  
 }
 
 .main-container p {
@@ -26,7 +30,7 @@
 }
 
 .btn {
-    background: purple;
+    background: var(--Main-color);
     color: antiquewhite;
     border-radius: 10px;
     padding: 10px 20px;
@@ -36,5 +40,5 @@
 }
 
 .btn:hover {
-    background-color: rgb(197, 0, 197);
+    background-color: var(--Secondary-color);
 }
