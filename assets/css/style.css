@@ -70,3 +70,9 @@ main {
     text-decoration: none;
     color: antiquewhite;
 }
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+   gap: 15px;
+}
