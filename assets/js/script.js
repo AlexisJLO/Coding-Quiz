@@ -32,21 +32,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var questions = [
     {
-      question: "What does 'DOM' stand for?",
+      question: "How can you open a link in a new tab/browser window?",
       answers: [
-        { text: "Document Object Model", correct: true },
-        { text: "Document Oriented Model", correct: false },
-        { text: "Data Object Model", correct: false },
-        { text: "Dynamic Object Model", correct: false },
+        { text: "<a href='url' new>", correct: false },
+        { text: "<a href='url' new_window>", correct: false },
+        { text: "<a href='url' target='_blank'>", correct: true },
+        { text: "<a href='url' target='_new'>", correct: false },
       ],
     },
     {
-      question: "Commonly used in data types DO NOT include:",
+      question: "What does CSS stand for?",
       answers: [
-        { text: "String", correct: false },
-        { text: "Number", correct: false },
-        { text: "Boolean", correct: false },
-        { text: "Function", correct: true },
+        { text: "Creative Style Sheets", correct: false },
+        { text: "Computer Style Sheets", correct: false },
+        { text: "Cascading Style Sheets", correct: true },
+        { text: "Colorful Style Sheets", correct: false },
       ],
     },
     {
@@ -69,13 +69,12 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
     },
     {
-      question:
-        "The condition in an if/else statement is enclosed within a ____.",
+      question: "How do you call a function named 'myFunction'?",
       answers: [
-        { text: "Quotes", correct: false },
-        { text: "Curly brackets", correct: true },
-        { text: "Parentheses", correct: false },
-        { text: "Square brackets", correct: false },
+        { text: "call myFunction();", correct: false },
+        { text: "myFunction();", correct: true },
+        { text: "call to function myFunction();", correct: false },
+        { text: "Dial myFunction();", correct: false },
       ],
     },
   ];
@@ -99,14 +98,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (answer.correct) {
       currentScore++;
       feedbackText.textContent = "Correct!";
-    } else if (!answer.correct) {
+    } else {
       feedbackText.textContent = "Wrong!";
       decreaseTime();
     }
 
     setTimeout(() => {
-      if (currentQuestionIndex < questions.length - 1) {
-        currentQuestionIndex++;
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
         showQuestion(questions[currentQuestionIndex]);
         feedbackText.textContent = "";
       } else {
