@@ -97,19 +97,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function selectAnswer(answer) {
     if (answer.correct) {
-      score++;
+      currentScore++;
       feedbackText.textContent = "Correct!";
-    } else {
-      decreaseTime();
+    } else if (!answer.correct) {
       feedbackText.textContent = "Wrong!";
+      decreaseTime();
     }
 
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-      showQuestion(questions[currentQuestionIndex]);
+    setTimeout(() => {
+      if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        showQuestion(questions[currentQuestionIndex]);
+        feedbackText.textContent = "";
+      } else {
+        endQuiz();
+      }
+    }, 1000);
+  }
+
+  function decreaseTime() {
+    if (timeLeft >= 10) {
+      timeLeft -= 10;
     } else {
-      endGame();
+      timeLeft = 0;
     }
+    updateTimeDisplay();
   }
 
   function updateTimer() {
@@ -140,7 +152,8 @@ document.addEventListener("DOMContentLoaded", function () {
     highScores.sort((a, b) => b.score - a.score);
 
     localStorage.setItem("highScores", JSON.stringify(highScores));
-    window.location.href = "index.html";
+
+    viewHighScores();
   }
 
   function viewHighScores() {
