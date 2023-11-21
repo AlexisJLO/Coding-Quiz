@@ -43,8 +43,12 @@ As a coding student, I want to take a timed quiz on HTML , CSS, and JavaScript f
 
 ## Deployment
 
-1. Clone the repository.
+1. Clone the repository: https://github.com/AlexisJLO/Coding-Quiz 
 2. Open the 'index.html' file in your web browser
+
+### or
+
+1. Open Live Website: https://alexisjlo.github.io/Coding-Quiz/
 
 ## Credits
 
